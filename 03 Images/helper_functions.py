@@ -42,3 +42,11 @@ def describe_images(*images, names=None):
             print(name)
         describe_image(image)
         print()
+         
+
+def get_excel_files(directory):
+    """Get excel files from `pathlib.Path` object."""
+    excel_filenames = [] 
+    for el in directory.glob('*'):
+        if el.is_file() and el.suffix == '.xlsx':
+            excel_filenames.append(el)
